@@ -1,0 +1,29 @@
+@All
+Feature: Login Functionality
+         Here we will test login by admin
+         Super admin, guest and customers
+
+Background:
+            Given user is on login page
+
+@Regression
+Scenario Outline: Login by customer #Scenario outline is for test driven wherein you have to gie examples
+                  When user enter username <username>
+                  And user enter password <password>
+                  And user click on sign up button
+                  Then user should be login successfully
+    Example:
+            |   username    |   password    |
+            |   testing     |   abc@123     |
+            |   testing1    |   abc123@     |
+            |   testing2    |   ababc       |
+
+
+
+1. just write behave in terminal and enter
+2. behave --tags=smoke, is used to run only smoke tagged scenarios
+3. behave --tags=smoke,abcd to execute two test cases
+4. behave --tagse=smoke --tags=sanity, this is kind of and only 1 test case will execute which have both tags
+5. For Allure reporting xml/json = behave -f allure_behave.formatter:AllureFormatter -o C:\Users\chirag\PycharmProjects\BDDFramework
+6. For HTML reports go to command prompt = allure serve C:\Users\chirag\PycharmProjects\BDDFramework
+7. Cltrl + / is for comment #
